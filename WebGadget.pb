@@ -123,7 +123,11 @@ CompilerSelect #PB_Compiler_OS
 CompilerEndSelect
 
 
-logoimg = CatchImage(#PB_Any,?browser)
+If FileSize(systrayiconpng) <= 0
+    logoimg = CatchImage(#PB_Any,?browser)
+  Else    
+    logoimg = LoadImage(#PB_Any,systrayiconpng)
+EndIf
 logoimgwin1 = CatchImage(#PB_Any,?show)
 logoimgwin2 = CatchImage(#PB_Any,?hide)
 logoimgwin3 = CatchImage(#PB_Any,?onoff)
